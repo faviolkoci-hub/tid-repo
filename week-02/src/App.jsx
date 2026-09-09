@@ -3,8 +3,14 @@ import ToDoList from "./ToDoList.jsx";
 import ToDoPanel from "./ToDoPanel.jsx";
 
 function App() {
-  const annasToDoList = ["Call the landlord", "Book the dentist"];
-  const konstantinaToDoList = ["Buy milk", "Book the dentist"];
+  const annasToDoList = [
+    { id: "anna-1", text: "Call the landlord", done: false },
+    { id: "anna-2", text: "Book the dentist", done: false },
+  ];
+  const konstantinaToDoList = [
+    { id: "konstantina-1", text: "Buy milk", done: false },
+    { id: "konstantina-2", text: "Book the dentist", done: false },
+  ];
 
   return (
     <>
