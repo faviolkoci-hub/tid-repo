@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 import NewTodoForm from "./NewTodoForm.jsx";
 import TodoItem from "./TodoItem.jsx";
+import "./todoList.css";
 
 function loadTodos(name, fallback) {
   const saved = localStorage.getItem(`todos-${name}`);
   return saved ? JSON.parse(saved) : fallback;
 }
+
+
 
 export default function ToDoList({ firstName, todos }) {
   let h1Style = { color: "deeppink", backgroundColor: "white" };
@@ -31,7 +34,7 @@ export default function ToDoList({ firstName, todos }) {
   }
 
   return (
-    <>
+    <div className="todo-body">
       <h1 style={h1Style}>To Do List for {firstName}</h1>
 
       <NewTodoForm onAdd={handleAdd} />
@@ -50,6 +53,6 @@ export default function ToDoList({ firstName, todos }) {
           ))}
         </ul>
       )}
-    </>
+    </div>
   );
 }

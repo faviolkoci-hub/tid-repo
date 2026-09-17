@@ -12,7 +12,7 @@ export default function NewTodoForm({ onAdd }) {
   return (
     <form onSubmit={handleSubmit}>
       <input value={text} onChange={(e) => setText(e.target.value)} />
-      <button disabled={text.length === 0}>Add</button>
+      <button id="add-btn" disabled={text.length === 0}>Add</button>
     </form>
   );
 }

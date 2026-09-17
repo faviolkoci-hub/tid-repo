@@ -1,0 +1,19 @@
+
+.todo-list {
+  background-color: greenyellow;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+* {
+  font-family: "Lato", sans-serif;
+}
+
+.todo-list {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box; /* padding no longer adds to width, so the edge margin holds */
+}
