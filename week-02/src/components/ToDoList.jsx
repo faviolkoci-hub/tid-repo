@@ -1,19 +1,21 @@
 import { useState, useEffect } from "react";
 import NewTodoForm from "./NewTodoForm.jsx";
 import TodoItem from "./TodoItem.jsx";
-import "./todoList.css";
-import { fetchTodos, createTodo, setTodoDone, deleteTodo } from "./services/todoService.js";
+import "../ToDoList.css";
+import { fetchTodos, createTodo, setTodoDone, deleteTodo } from "../services/todoService.js";
 
-export default function ToDoList({ firstName }) {
+export default function ToDoList({ firstName, userId }) {
   let h1Style = { color: "deeppink", backgroundColor: "white" };
   const [todoList, setTodoList] = useState([]);
 
   useEffect(() => {
     async function load() {
-      setTodoList(await fetchTodos());
+      const todos = await fetchTodos();
+      const userTodos = todos.filter((todo) => todo.owner === userId);
+      setTodoList(userTodos);
     }
     load();
-  }, []);
+  }, [userId]);
 
   async function handleAdd(text) {
     const created = await createTodo(text);
